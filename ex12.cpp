@@ -5,7 +5,7 @@ int main(int argc, char **argv)
 {
   gmsh::initialize();
 
-  gmsh::model::add("t2");
+  gmsh::model::add("t12");
 
   double lc = 1e-2;
   gmsh::model::geo::addPoint(0, 0, 0, lc, 1);
@@ -88,15 +88,58 @@ int main(int argc, char **argv)
 
 
 
-  gmsh::model::geo::addCurveLoop({4,5,32,-9}, 40);
-  gmsh::model::geo::addPlaneSurface({40}, 40);
+  gmsh::model::geo::addCurveLoop({4,5,-32,-9},1);
+  gmsh::model::geo::addSurfaceFilling({1}, 1);
   
-  gmsh::model::geo::addCurveLoop({28,14,-30,18}, 41);
-  gmsh::model::geo::addPlaneSurface({41}, 41);
+  gmsh::model::geo::addCurveLoop({-3,5,31,-9},2);
+  gmsh::model::geo::addSurfaceFilling({2}, 2);
+  
+  gmsh::model::geo::addCurveLoop({4,-8,-34,12},3);
+  gmsh::model::geo::addSurfaceFilling({3}, 3);
+  
+  gmsh::model::geo::addCurveLoop({-3,-8,33,12},4);
+  gmsh::model::geo::addSurfaceFilling({4}, 4);
+  
+  gmsh::model::geo::addCurveLoop({2,13,-30,-17},5);
+  gmsh::model::geo::addSurfaceFilling({5}, 5);
+  
+  gmsh::model::geo::addCurveLoop({-1,13,29,-17},6);
+  gmsh::model::geo::addSurfaceFilling({6}, 6);
+  
+  gmsh::model::geo::addCurveLoop({2,-16,-36,20},7);
+  gmsh::model::geo::addSurfaceFilling({7}, 7);
+  
+  gmsh::model::geo::addCurveLoop({-1,-16,35,20},8);
+  gmsh::model::geo::addSurfaceFilling({8}, 8);
+  
+  gmsh::model::geo::addCurveLoop({11,34,-7,-25},9);
+  gmsh::model::geo::addSurfaceFilling({9}, 9);
+  
+  gmsh::model::geo::addCurveLoop({10,25,-6,-32},10);
+  gmsh::model::geo::addSurfaceFilling({10}, 10);
+  
+  gmsh::model::geo::addCurveLoop({31,10,-26,-6},11);
+  gmsh::model::geo::addSurfaceFilling({11}, 11);
+  
+  gmsh::model::geo::addCurveLoop({33,-11,-26,7},12);
+  gmsh::model::geo::addSurfaceFilling({12}, 12);
+  
+  gmsh::model::geo::addCurveLoop({35,-19,-27,15},13);
+  gmsh::model::geo::addSurfaceFilling({13}, 13);
+  
+  gmsh::model::geo::addCurveLoop({19,36,-15,-28},14);
+  gmsh::model::geo::addSurfaceFilling({14}, 14);
+  
+  gmsh::model::geo::addCurveLoop({18,28,-14,-30},15);
+  gmsh::model::geo::addSurfaceFilling({15}, 15);
+  
+  gmsh::model::geo::addCurveLoop({29,18,-27,-14},16);
+  gmsh::model::geo::addSurfaceFilling({16}, 16);
   
 
-//  gmsh::model::geo::addSurfaceLoop({1, 2, 3, 4}, 1);
- // gmsh::model::geo::addVolume({1});
+
+  gmsh::model::geo::addSurfaceLoop({1, 2, 3, 4,5,6,7,8,9,10,11,12,13,14,15,16}, 1);
+  gmsh::model::geo::addVolume({1});
 
   gmsh::model::geo::synchronize();
 
