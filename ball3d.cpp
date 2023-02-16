@@ -25,7 +25,7 @@ protected:
     double x;
     double y;
     double z;
-    // Некая величина, в попугаях
+    // Некая величина
     double smth;
     // Скорость
     double vx;
