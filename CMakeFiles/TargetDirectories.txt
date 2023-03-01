@@ -1,3 +1,3 @@
 /home/anna/4/ex/4-sem/CMakeFiles/rebuild_cache.dir
 /home/anna/4/ex/4-sem/CMakeFiles/edit_cache.dir
-/home/anna/4/ex/4-sem/CMakeFiles/ball3d.dir
+/home/anna/4/ex/4-sem/CMakeFiles/hyper_elasticity2.dir

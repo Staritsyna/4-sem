@@ -111,44 +111,44 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named ball3d
+# Target rules for targets named hyper_elasticity2
 
 # Build rule for target.
-ball3d: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 ball3d
-.PHONY : ball3d
+hyper_elasticity2: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 hyper_elasticity2
+.PHONY : hyper_elasticity2
 
 # fast build rule for target.
-ball3d/fast:
-	$(MAKE) -f CMakeFiles/ball3d.dir/build.make CMakeFiles/ball3d.dir/build
-.PHONY : ball3d/fast
+hyper_elasticity2/fast:
+	$(MAKE) -f CMakeFiles/hyper_elasticity2.dir/build.make CMakeFiles/hyper_elasticity2.dir/build
+.PHONY : hyper_elasticity2/fast
 
-ball3d.o: ball3d.cpp.o
+lab3.o: lab3.cpp.o
 
-.PHONY : ball3d.o
+.PHONY : lab3.o
 
 # target to build an object file
-ball3d.cpp.o:
-	$(MAKE) -f CMakeFiles/ball3d.dir/build.make CMakeFiles/ball3d.dir/ball3d.cpp.o
-.PHONY : ball3d.cpp.o
+lab3.cpp.o:
+	$(MAKE) -f CMakeFiles/hyper_elasticity2.dir/build.make CMakeFiles/hyper_elasticity2.dir/lab3.cpp.o
+.PHONY : lab3.cpp.o
 
-ball3d.i: ball3d.cpp.i
+lab3.i: lab3.cpp.i
 
-.PHONY : ball3d.i
+.PHONY : lab3.i
 
 # target to preprocess a source file
-ball3d.cpp.i:
-	$(MAKE) -f CMakeFiles/ball3d.dir/build.make CMakeFiles/ball3d.dir/ball3d.cpp.i
-.PHONY : ball3d.cpp.i
+lab3.cpp.i:
+	$(MAKE) -f CMakeFiles/hyper_elasticity2.dir/build.make CMakeFiles/hyper_elasticity2.dir/lab3.cpp.i
+.PHONY : lab3.cpp.i
 
-ball3d.s: ball3d.cpp.s
+lab3.s: lab3.cpp.s
 
-.PHONY : ball3d.s
+.PHONY : lab3.s
 
 # target to generate assembly for a file
-ball3d.cpp.s:
-	$(MAKE) -f CMakeFiles/ball3d.dir/build.make CMakeFiles/ball3d.dir/ball3d.cpp.s
-.PHONY : ball3d.cpp.s
+lab3.cpp.s:
+	$(MAKE) -f CMakeFiles/hyper_elasticity2.dir/build.make CMakeFiles/hyper_elasticity2.dir/lab3.cpp.s
+.PHONY : lab3.cpp.s
 
 # Help Target
 help:
@@ -158,10 +158,10 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... ball3d"
-	@echo "... ball3d.o"
-	@echo "... ball3d.i"
-	@echo "... ball3d.s"
+	@echo "... hyper_elasticity2"
+	@echo "... lab3.o"
+	@echo "... lab3.i"
+	@echo "... lab3.s"
 .PHONY : help
 
 

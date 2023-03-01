@@ -53,7 +53,7 @@ CMAKE_BINARY_DIR = /home/anna/4/ex/4-sem
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/ball3d.dir/all
+all: CMakeFiles/hyper_elasticity2.dir/all
 
 .PHONY : all
 
@@ -63,36 +63,36 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/ball3d.dir/clean
+clean: CMakeFiles/hyper_elasticity2.dir/clean
 
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/ball3d.dir
+# Target rules for target CMakeFiles/hyper_elasticity2.dir
 
 # All Build rule for target.
-CMakeFiles/ball3d.dir/all:
-	$(MAKE) -f CMakeFiles/ball3d.dir/build.make CMakeFiles/ball3d.dir/depend
-	$(MAKE) -f CMakeFiles/ball3d.dir/build.make CMakeFiles/ball3d.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/anna/4/ex/4-sem/CMakeFiles --progress-num=1,2 "Built target ball3d"
-.PHONY : CMakeFiles/ball3d.dir/all
+CMakeFiles/hyper_elasticity2.dir/all:
+	$(MAKE) -f CMakeFiles/hyper_elasticity2.dir/build.make CMakeFiles/hyper_elasticity2.dir/depend
+	$(MAKE) -f CMakeFiles/hyper_elasticity2.dir/build.make CMakeFiles/hyper_elasticity2.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/anna/4/ex/4-sem/CMakeFiles --progress-num=1,2 "Built target hyper_elasticity2"
+.PHONY : CMakeFiles/hyper_elasticity2.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/ball3d.dir/rule: cmake_check_build_system
+CMakeFiles/hyper_elasticity2.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/anna/4/ex/4-sem/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/ball3d.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/hyper_elasticity2.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/anna/4/ex/4-sem/CMakeFiles 0
-.PHONY : CMakeFiles/ball3d.dir/rule
+.PHONY : CMakeFiles/hyper_elasticity2.dir/rule
 
 # Convenience name for target.
-ball3d: CMakeFiles/ball3d.dir/rule
+hyper_elasticity2: CMakeFiles/hyper_elasticity2.dir/rule
 
-.PHONY : ball3d
+.PHONY : hyper_elasticity2
 
 # clean rule for target.
-CMakeFiles/ball3d.dir/clean:
-	$(MAKE) -f CMakeFiles/ball3d.dir/build.make CMakeFiles/ball3d.dir/clean
-.PHONY : CMakeFiles/ball3d.dir/clean
+CMakeFiles/hyper_elasticity2.dir/clean:
+	$(MAKE) -f CMakeFiles/hyper_elasticity2.dir/build.make CMakeFiles/hyper_elasticity2.dir/clean
+.PHONY : CMakeFiles/hyper_elasticity2.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

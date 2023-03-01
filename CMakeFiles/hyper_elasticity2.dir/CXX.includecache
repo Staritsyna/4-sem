@@ -1,0 +1,14 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/anna/4/ex/4-sem/lab3.cpp
+dolfin.h
+-
+HyperElasticity.h
+/home/anna/4/ex/4-sem/HyperElasticity.h
+
