@@ -111,6 +111,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named pois2
+
+# Build rule for target.
+pois2: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 pois2
+.PHONY : pois2
+
+# fast build rule for target.
+pois2/fast:
+	$(MAKE) -f CMakeFiles/pois2.dir/build.make CMakeFiles/pois2.dir/build
+.PHONY : pois2/fast
+
+#=============================================================================
 # Target rules for targets named hyper_elasticity2
 
 # Build rule for target.
@@ -150,6 +163,33 @@ lab3.cpp.s:
 	$(MAKE) -f CMakeFiles/hyper_elasticity2.dir/build.make CMakeFiles/hyper_elasticity2.dir/lab3.cpp.s
 .PHONY : lab3.cpp.s
 
+pois_lab3.o: pois_lab3.cpp.o
+
+.PHONY : pois_lab3.o
+
+# target to build an object file
+pois_lab3.cpp.o:
+	$(MAKE) -f CMakeFiles/pois2.dir/build.make CMakeFiles/pois2.dir/pois_lab3.cpp.o
+.PHONY : pois_lab3.cpp.o
+
+pois_lab3.i: pois_lab3.cpp.i
+
+.PHONY : pois_lab3.i
+
+# target to preprocess a source file
+pois_lab3.cpp.i:
+	$(MAKE) -f CMakeFiles/pois2.dir/build.make CMakeFiles/pois2.dir/pois_lab3.cpp.i
+.PHONY : pois_lab3.cpp.i
+
+pois_lab3.s: pois_lab3.cpp.s
+
+.PHONY : pois_lab3.s
+
+# target to generate assembly for a file
+pois_lab3.cpp.s:
+	$(MAKE) -f CMakeFiles/pois2.dir/build.make CMakeFiles/pois2.dir/pois_lab3.cpp.s
+.PHONY : pois_lab3.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -158,10 +198,14 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
+	@echo "... pois2"
 	@echo "... hyper_elasticity2"
 	@echo "... lab3.o"
 	@echo "... lab3.i"
 	@echo "... lab3.s"
+	@echo "... pois_lab3.o"
+	@echo "... pois_lab3.i"
+	@echo "... pois_lab3.s"
 .PHONY : help
 
 

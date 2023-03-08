@@ -12,4 +12,7 @@ include(${DOLFIN_USE_FILE})
 add_executable(hyper_elasticity2 lab3.cpp)
 target_link_libraries(hyper_elasticity2 dolfin)
 
+add_executable(pois2 pois_lab3.cpp)
+target_link_libraries(pois2 dolfin)
+
 

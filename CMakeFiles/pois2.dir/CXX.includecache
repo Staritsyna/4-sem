@@ -1,0 +1,14 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/anna/4/ex/4-sem/pois_lab3.cpp
+dolfin.h
+-
+Poisson.h
+/home/anna/4/ex/4-sem/Poisson.h
+
