@@ -17,7 +17,7 @@ class Right : public SubDomain
 {
   bool inside(const Array<double>& x, bool on_boundary) const
   {
-    return (std::abs(x[0] - 1.0) < DOLFIN_EPS) && on_boundary;
+    return (std::abs(x[0] - 1) < DOLFIN_EPS) && on_boundary;
   }
 };
 
@@ -33,7 +33,7 @@ public:
   {
     values[0] = 0.0;
     values[1] = 0.0;
-    values[2] = 0.0;
+    values[2] = 0.5*x[2];
   }
 
 };
@@ -62,10 +62,10 @@ public:
 
     // Rotate at right end
     values[0] = 0.0;
-    //values[1] = scale*(y - x[1]);
-   // values[2] = scale*(z - x[2]);
-    values[1] =0;
-     values[2]=0;
+    values[1] = scale*(y - x[1]);
+    values[2] = scale*(z - x[2]);
+    //values[1] =0;
+    // values[2]=0;
   }
 };
 
@@ -102,7 +102,7 @@ int main()
 
   // Set material parameters
   const double E  = 10.0;
-  const double nu = 0.3;
+  const double nu = -0.9;
   auto mu = std::make_shared<Constant>(E/(2*(1 + nu)));
   auto lambda = std::make_shared<Constant>(E*nu/((1 + nu)*(1 - 2*nu)));
 
@@ -116,10 +116,10 @@ int main()
   J.mu = mu; J.lmbda = lambda; J.u = u;
 
   // Solve nonlinear variational problem F(u; v) = 0
-  solve(F == 0, *u, bcs, J);
+  solve(F == 0, *u, bcl, J);
 
   // Save solution in VTK format
-  File file("displacement2.pvd");
+  File file("displacement-09.pvd");
   file << *u;
 
   return 0;
