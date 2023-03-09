@@ -21,6 +21,7 @@ class Right : public SubDomain
   }
 };
 
+
 // Dirichlet boundary condition for clamp at left end
 class Clamp : public Expression
 {
@@ -30,8 +31,8 @@ public:
 
   void eval(Array<double>& values, const Array<double>& x) const
   {
-    values[0] = 0.1;
-    values[1] = 0.2;
+    values[0] = 0.0;
+    values[1] = 0.0;
     values[2] = 0.0;
   }
 
@@ -49,35 +50,33 @@ public:
     const double scale = 0.5;
 
     // Center of rotation
-    const double y0 = 0.5;
-    const double z0 = 0.5;
+    const double y0 = 0.0;
+    const double z0 = 0.0;
 
     // Large angle of rotation (60 degrees)
     double theta = 1.04719755;
 
     // New coordinates
     double y = y0 + x[1]/pow(x[0]*x[0]+x[1]*x[1]+x[2]*x[2],0.333);
-    double z = z0 + x[2]/pow(x[0]*x[0]+x[1]*x[1]+x[2]*x[2],0.333);
+    double z = z0 + x[2]/pow(x[0]*x[0]+x[1]*x[1]+x[0]*x[0],0.333);
 
     // Rotate at right end
     values[0] = 0.0;
-    values[1] = scale*(y - x[1]);
-    values[2] = scale*(z - x[2]);
+    //values[1] = scale*(y - x[1]);
+   // values[2] = scale*(z - x[2]);
+    values[1] =0;
+     values[2]=0;
   }
 };
 
 int main()
 {
-  Point  p1;
-  p1[0] = 0;
-  p1[1] = 0;
-  p1[2] = 0;
-  Point p2;
-  p2[0] = 1;
-  p2[1] = 1;
-  p2[2] = 1;
+
   // Create mesh and define function space
-  auto mesh = std::make_shared<BoxMesh>(p1,p2,24, 8,8);
+
+  auto mesh = std::make_shared<dolfin::Mesh>("t2.xml");
+  
+  //auto mesh = std::make_shared<BoxMesh>(p1,p2,24, 8,8);
   auto V = std::make_shared<HyperElasticity::FunctionSpace>(mesh);
 
   // Define Dirichlet boundaries
@@ -97,12 +96,13 @@ int main()
   auto B = std::make_shared<Constant>(0.0, -0.5, 0.0);
   auto T = std::make_shared<Constant>(0.1,  0.0, 0.0);
 
+
   // Define solution function
   auto u = std::make_shared<Function>(V);
 
   // Set material parameters
   const double E  = 10.0;
-  const double nu = -0.3;
+  const double nu = 0.3;
   auto mu = std::make_shared<Constant>(E/(2*(1 + nu)));
   auto lambda = std::make_shared<Constant>(E*nu/((1 + nu)*(1 - 2*nu)));
 
